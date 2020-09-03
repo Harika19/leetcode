@@ -1,0 +1,12 @@
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+     const c = x.toString().split("").reverse().join("");
+     if(Number(c)===x){
+         return true;
+     }
+        return false;
+
+};
