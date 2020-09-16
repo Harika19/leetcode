@@ -1,0 +1,5 @@
+var removeElement = function(nums) {
+  const a=  [...new Set(nums)]
+  return a.length
+};
+console.log(removeElement([1,1,2]))
