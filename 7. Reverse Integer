@@ -1,0 +1,23 @@
+/**
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+    let a = Math.abs(x)
+  if(a <10){
+    return x
+  }
+ let  r=""
+  if(x* (-1)>0){
+    r+= "-"
+  }
+  while(a>0){
+    let s = a% 10;
+    r += s;
+    a = Math.floor(a/10)
+  }
+  if(Math.abs(parseInt(r))> Math.pow(2,31)){
+    return 0;
+  }
+  return parseInt(r)
+};
