@@ -1,0 +1,16 @@
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+var groupAnagrams = function(strs) {
+    let h ={}
+  strs.forEach(i =>{
+    let a = i.split('').sort().join('')
+     if(h[a]){
+       h[a].push(i)
+     }else{
+     h[a] = [i]
+     }
+  })
+  return Object.values(h)
+};
