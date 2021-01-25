@@ -1,0 +1,22 @@
+/**. https://leetcode.com/problems/number-of-rectangles-that-can-form-the-largest-square/
+ * @param {number[][]} rectangles. 
+ * @return {number}
+ */
+var countGoodRectangles = function (rectangles) {
+  let df = []
+  let c = 0
+  for (let i of rectangles) {
+    if (i[0] < i[1]) {
+      df.push(i[0])
+    } else {
+      df.push(i[1])
+    }
+  }
+  let t = Math.max(...df)
+  for (let i = 0; i < df.length; i++) {
+    if (t == df[i]) {
+      c++
+    }
+  }
+  return c
+};
