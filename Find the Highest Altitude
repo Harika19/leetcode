@@ -1,0 +1,13 @@
+/** https://leetcode.com/problems/find-the-highest-altitude/
+ * @param {number[]} gain
+ * @return {number}
+ */
+var largestAltitude = function(gain) {
+     let currentGain = 0
+    let r = 0
+    for(let num of gain){
+        currentGain += num
+        r = Math.max(currentGain, r)
+    }
+    return r
+};
