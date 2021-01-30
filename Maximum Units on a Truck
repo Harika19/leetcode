@@ -1,0 +1,19 @@
+/** https://leetcode.com/problems/maximum-units-on-a-truck/
+ * @param {number[][]} boxTypes
+ * @param {number} truckSize
+ * @return {number}
+ */
+var maximumUnits = function(boxTypes, truckSize) {
+     let result = 0;
+    boxTypes.sort((a,b) => b[1]-a[1])
+    for(let i =0;i<boxTypes.length;i++){
+      if(boxTypes[i][0]< truckSize){
+        result += boxTypes[i][0]*boxTypes[i][1];
+        truckSize -= boxTypes[i][0]
+      }else{
+        result += boxTypes[i][1] * truckSize
+        break;
+      }
+    }
+    return result
+};
