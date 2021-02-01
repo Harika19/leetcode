@@ -1,0 +1,14 @@
+/**. https://leetcode.com/problems/reformat-phone-number/
+ * @param {string} number
+ * @return {string}
+ */
+var reformatNumber = function(number) {
+    let arr = number.split('-').join('').split(' ').join('').split('')
+    let res = ''
+    while(arr.length >= 4){
+        arr.length == 4 ? 
+            res += arr.splice(0,2).join('') +'-'+arr.splice(0,2).join('') : res += arr.splice(0,3).join('') + '-'    
+    }
+    res += arr.join('')
+    return res 
+};
