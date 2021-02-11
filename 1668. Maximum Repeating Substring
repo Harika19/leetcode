@@ -1,0 +1,14 @@
+/** https://leetcode.com/problems/maximum-repeating-substring/
+ * @param {string} sequence
+ * @param {string} word
+ * @return {number}
+ */
+var maxRepeating = function (sequence, word) {
+  let c = 0
+  let a = word
+  while (sequence.includes(word)) {
+    word += a
+    c++
+  }
+  return c
+};
