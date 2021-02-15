@@ -1,0 +1,34 @@
+/**.  https://leetcode.com/problems/defuse-the-bomb/
+ * @param {number[]} code
+ * @param {number} k
+ * @return {number[]}
+ */
+var decrypt = function(code, k) {
+    let optarray = []
+  let sum = 0
+  if (k > 0) {
+    for (var i = 0; i < code.length; i++) {
+      let first = code.shift()
+      code.push(first)
+      for (var j = 0; j < k; j++) {
+        sum += code[j]
+      }
+      optarray.push(sum)
+      sum = 0
+    }
+    return optarray
+  } else {
+    code.reverse()
+    k *= -1
+    for (var i = 0; i < code.length; i++) {
+      let first = code.shift()
+      code.push(first)
+      for (var j = 0; j < k; j++) {
+        sum += code[j]
+      }
+      optarray.push(sum)
+      sum = 0
+    }
+    return optarray.reverse()
+  }
+};
