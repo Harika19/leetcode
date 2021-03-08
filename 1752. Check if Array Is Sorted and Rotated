@@ -1,0 +1,16 @@
+/**.  https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var check = function(nums) {
+    let shifts= 0 
+    let c = nums.slice()
+    c.sort((a, b) => a - b)
+    while(shifts < nums.length){
+        nums.unshift(nums.pop())
+        shifts++
+        if(JSON.stringify(nums) === JSON.stringify(c))
+        return true
+    }
+    return false;
+};
