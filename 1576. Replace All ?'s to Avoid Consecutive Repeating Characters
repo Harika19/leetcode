@@ -1,0 +1,20 @@
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var modifyString = function(s) {
+    let chars = s.split('');
+    for (let i = 0; i < chars.length; ++ i) {
+        if (chars[i] === '?') {
+            if (chars[i - 1] !== 'a' && chars[i + 1] !== 'a') {
+                chars[i] = 'a';
+            } else if (chars[i - 1] !== 'b' && chars[i + 1] !== 'b') {
+                chars[i] = 'b';
+            } else {
+                chars[i] = 'c';
+            }
+        }
+    }
+    
+    return chars.join('');
+};
