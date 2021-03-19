@@ -1,0 +1,20 @@
+/**
+ * @param {string[]} logs
+ * @return {number}
+ */
+var minOperations = function(logs) {
+     let c=0
+    for(let i of logs){
+      if(i === './'){
+        continue
+      }else if(i ==='../'){
+        c--
+      }else{
+        c++
+      }
+       if(c<0){
+      c=0
+    }
+    }
+    return c
+};
