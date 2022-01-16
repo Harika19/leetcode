@@ -1,0 +1,11 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLastWord = function(s) {
+    let a = s.trim().split(' ');
+    let length = a[a.length - 1].length;
+    
+   return length;
+};
+console.log(lengthOfLastWord("   fly me   to   the moon  "))
