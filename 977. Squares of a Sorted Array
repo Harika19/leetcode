@@ -1,0 +1,31 @@
+// using merge sort 
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortedSquares = function(nums) {
+    for(let i =0;i<nums.length;i++){
+      nums[i] = Math.pow(nums[i], 2)
+    }
+    
+    function divide(ar){
+      if(ar.length<2) return ar
+      let mid = Math.floor(ar.length/2)
+      let left = divide(ar.slice(0,mid))
+      let right = divide(ar.slice(mid))
+      return merge(left, right)
+    }
+    function merge(left, right){
+      let result = []
+      while(left.length && right.length){
+        if(left[0]<right[0]){
+        result.push(left.shift())
+      }else{
+        result.push(right.shift())
+      }
+      }
+      return result.concat(left, right)
+    }
+    nums = divide(nums)
+    return nums
+};
