@@ -1,0 +1,26 @@
+var moveZeroes = function(nums) {
+  let index = 0;
+const length = nums.length;
+for (let i = 0; i < length; i++) {
+    if (nums[i] !== 0) {
+        nums[index] = nums[i];
+        index++;
+    }
+}
+for (let i = index; i < length; i++) {
+    nums[i] = 0;
+}
+
+return nums;
+};
+
+
+//with inbuilt functions
+var moveZeroes = function(nums) {
+  let unique =  nums.filter(i => i!==0);
+  console.log(unique)
+  const diffIndex = nums.length-unique.length;
+    for(let index =0;index<(diffIndex); index++){
+      unique.push(0);
+    }
+  return unique;
